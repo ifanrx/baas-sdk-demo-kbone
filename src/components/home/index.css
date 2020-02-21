@@ -1,0 +1,113 @@
+.index {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-size: 14px;
+  border: 1rpx solid transparent;
+}
+
+.index-profile {
+  width: 80%;
+  margin: 50px auto 30px auto;
+}
+
+.index-profile__img {
+  display: block;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.index-profile__nickname {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.index-title {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.index-books {
+  width: 80%;
+  margin: 25px auto;
+  overflow: hidden;
+}
+
+.index-books__input {
+  width: 100%;
+}
+
+.index-books__input input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  border: solid 1px #dedede;
+  padding: 0 10px;
+  font-size: 14px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.index-books__input input .wx-comp-input {
+  line-height: 40px;
+}
+
+.index-books__showLayer {
+  margin-top: 10px;
+  max-height: 275px;
+  overflow: auto;
+}
+
+.index-books__item {
+  display: flex;
+  min-height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.index-books__controls--show,
+.index-books__controls--edit-area {
+  flex-basis: 40%;
+}
+
+.index-books__controls--show,
+.index-books__controls--edit-area > input {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid transparent;
+  padding: 0 5px;
+}
+
+.index-books__controls--edit-area > input {
+  border: 1px solid #eee;
+  padding: 2px 5px; /*hack 上下 4rpx 为了解决 input 显示时文字的移动*/
+}
+
+.index-books__controls--create {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #2282de;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bolder;
+  border: none;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+.btn {
+  font-size: 10px;
+  margin: 0 5px;
+  -webkit-appearance: none;
+}
