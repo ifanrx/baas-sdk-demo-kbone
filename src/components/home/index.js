@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import {getBooks, addBook, deleteBook, updateBook} from '../../utils'
 import BaaS from 'baas'
+import avatar from '../../images/avatar.png'
 import './index.css'
 
 function Home() {
@@ -39,7 +40,6 @@ function Home() {
 
   const editBookButtonClick = useCallback(index => {
     const book = bookList[index]
-    console.log('ffff', book)
     if (book.isEditing) {
       updateBook(book.id, book.bookName, () => {
         fetchBookList()
@@ -63,7 +63,7 @@ function Home() {
         { process.env.isMiniprogram ? (
           <wx-open-data type="userAvatarUrl" className="index-profile__img"></wx-open-data>
         ): (
-          <div type="userAvatarUrl" className="index-profile__img"></div>
+          <img type="userAvatarUrl" className="index-profile__img" src={avatar} />
         )}
       </div>
       <div className="index-title">

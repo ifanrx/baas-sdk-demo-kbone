@@ -57,7 +57,8 @@
 }
 
 .index-books__input input .wx-comp-input {
-  line-height: 40px;
+  height: 38px;
+  line-height: 38px;
 }
 
 .index-books__showLayer {
@@ -74,17 +75,30 @@
   margin: 10px 0;
 }
 
+.index-books__title {
+  flex-shrink: 0;
+}
+
 .index-books__controls--show,
 .index-books__controls--edit-area {
-  flex-basis: 40%;
+  flex: 1;
+  padding: 0 5px;
 }
 
 .index-books__controls--show,
 .index-books__controls--edit-area > input {
+  width: 100%;
   height: 30px;
   line-height: 30px;
+  padding: 0 5px !important;
+  box-sizing: border-box;
   border: 1px solid transparent;
-  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.index-books__controls--edit-area > input .wx-comp-input {
+  height: 28px;
+  line-height: 28px;
 }
 
 .index-books__controls--edit-area > input {
@@ -107,7 +121,15 @@
 }
 
 .btn {
+  background: transparent;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
   font-size: 10px;
   margin: 0 5px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  border: solid 1px #dedede;
+  font-size: 12px;
   -webkit-appearance: none;
 }

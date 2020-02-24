@@ -12,8 +12,12 @@ export default function createApp() {
   const container = document.createElement('div')
   container.id = 'app'
   document.body.appendChild(container)
+  document.body.style.fontFamily = '"Roboto", "Helvetica", "Arial", sans-serif'
 
   ReactDOM.render(<Home />, container)
 }
 
-"undefined" != typeof wx && wx.getSystemInfoSync || createApp()
+if (!process.env.isMiniprogram) {
+  require('normalize.css')
+  createApp()
+}
