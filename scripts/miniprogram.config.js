@@ -36,8 +36,8 @@ module.exports = {
     attrValueReduce: 5000
   },
   projectConfig: {
-    projectname: 'kbone-template-react',
-    appid: 'wx3b040d33346e1b21'
+    projectname: 'my-bookshelf',
+    appid: ''
   }
 }
 
