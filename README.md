@@ -1,93 +1,23 @@
-# react-kbone
+# book-shelf
 
-使用 react 多端开发(小程序和Web)，基于 [kbone](https://github.com/wechat-miniprogram/kbone) 的 element 和 render。
+## 如何运行
 
-## 特性
+1. 在知晓云上创建应用（应用的 `client_id` 下一步会用到），并关联微信小程序（小程序的 `appid` 后面会用到）。
 
-* 一键接入，立即使用
-* 支持完整 JSX 语法，任意位置任意方式书写 JSX
-* webpack、hook、es2018+、babel7+、jsx、hot reload、cli，你想要的都有
+2. 安装依赖
 
-## 一套语法多端运行
+`npm install`
 
-```jsx
-import React, { useState } from 'react'
-import './index.css'
+3. 使用 src/schema-bookshelf.json 在知晓云上创建名为 bookshelf 的数据表。
 
-function Counter() {
-  const [count, setCount] = useState(0)
-  return (
-    <div>
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <span>{count}</span>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <div onClick={clickHandle}>跳转</div>
-    </div>
-  )
-}
+4. 修改配置
 
-function clickHandle() {
-  if ("undefined" != typeof wx && wx.getSystemInfoSync) {
-    wx.navigateTo({
-      url: '../log/index?id=1'
-    })
-  } else {
-    location.href = 'log.html'
-  }
-}
+  a. scripts/miniprogram.config.js 文件的 projectConfig.appid 字段填入第一步获取到的微信小程序 appid。
 
-export default Counter
-```
+  b. src/config.js 的 clientId 变量中填入第一步获取到的 `client_id`。
 
-## 快速开始
+5. 运行
 
-```js
-npx kbone-cli init my-app
-cd my-app
-npm run mp       //开发小程序
-npm run web      //开发 web
-npm run build    //发布 web
-```
+  小程序端：`npm run mp`
 
-
-## 目录说明
-
-```
-├─ build
-│  ├─ mp     //微信开发者工具指向的目录，用于生产环境
-│  ├─ web    //web 编译出的文件，用于生产环境
-├─ config
-├─ public
-├─ scripts
-├─ src
-│  ├─ assets
-│  ├─ components    //存放所有组件
-│  ├─ log.js        //入口文件，会 build 成  log.html
-│  └─ index.js      //入口文件，会 build 成  index.html
-```
-
-## 谁在使用 kbone？
-
-<table>
-	<tbody>
-		<tr>
-			<td>
-        <a target="_blank" href="https://developers.weixin.qq.com/community/develop/mixflow">
-          <img width="200px" src="https://raw.githubusercontent.com/wechat-miniprogram/kbone/develop/docs/images/code1.jpg">
-        </a>
-      </td>
-			<td>
-        <a target="_blank" href="http://omijs.org">
-          <img width="200px" src="https://github.com/Tencent/omi/raw/master/assets/omi-cloud.jpg">
-        </a>
-      </td>
-			<td width="92px">
-        <a target="_blank" href="https://github.com/Tencent/omi/issues/new">告诉我们</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## License
-
-MIT 
+  web 端：`npm run web`
